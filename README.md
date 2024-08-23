@@ -1,7 +1,5 @@
 # dreamhack.io
 ## php7cmp4re
-
-
 ```
 input1=7.:&inpit2=7:
 ```
@@ -56,3 +54,10 @@ Connection: keep-alive
 
 ![image](https://github.com/user-attachments/assets/b7f2f260-2c44-427b-8f80-e6d8a63472f4)
 
+## Carve Party
+- Click bằng tay đi.
+```js
+for(i=0; i<=10000; i++){
+ $('#jack-target').trigger("click")
+}
+```
