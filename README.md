@@ -172,3 +172,56 @@ for x in range(100, 201):
         print(res.text)
         break
 ```
+### amocafe
+```
+def org():
+    FLAG ='DH{55f2394156567886667940273839575eb0af4b3f115345f0cc8b9}'
+    menu_str = ''
+    # org = 2002760202557848382
+    #org = 0x1bcb3bcb0bbffb3e
+    org = FLAG[10:29]
+    org = int(org)
+
+    print(f'org: {org}')
+    st = ['' for i in range(16)]
+
+    for i in range (0, 16):
+        res = (org >> (4 * i)) & 0xf
+        if 0 < res < 12:
+            if ~res & 0xf == 0x4:
+                st[16-i-1] = '_'
+            else:
+                st[16-i-1] = str(res)
+        else:
+            st[16-i-1] = format(res, 'x')
+    menu_str = menu_str.join(st)
+    return menu_str
+def menu():
+    menu = '1_c_3_c_0__ff_3e'
+
+    menu = list(menu)
+
+    for i, d in enumerate(menu):
+        # '_'이면 11(b)로 저장
+        if d == '_':
+            menu[i] = 'b'
+        elif d == 'c':
+            menu[i] = 'c'
+        elif d == 'd':
+            menu[i] = 'd'
+        elif d == 'e':
+            menu[i] = 'e'
+        elif d == 'f':
+            menu[i] = 'f'
+    s = ''.join(str(s) for s in menu)
+    return(int(s, 16))
+menu_str = org()
+org = menu()
+print(f'org: {org}')
+```
+
+### simple_sqli_chatgpt
+- Câu này thật sự có thể solve bằng Chatgpt =))
+### command-injection-chatgpt
+- y chang câu trên
+### 
