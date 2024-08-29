@@ -224,4 +224,5 @@ print(f'org: {org}')
 - Câu này thật sự có thể solve bằng Chatgpt =))
 ### command-injection-chatgpt
 - y chang câu trên
-### 
+### out of money
+- 
